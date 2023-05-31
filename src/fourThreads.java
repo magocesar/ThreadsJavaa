@@ -3,25 +3,25 @@ public class fourThreads {
         Thread t1 = new Thread(new Runnable(){
             public void run(){
             System.out.println("Using Thread name: " + Thread.currentThread().getName());
-            getPrimeNumbers(2, 500000);
+            getPrimeNumbers(2, 125000);
             }
         });
         Thread t2 = new Thread(new Runnable(){
             public void run(){
             System.out.println("Using Thread name: " + Thread.currentThread().getName());
-            getPrimeNumbers(500001, 1000000);
+            getPrimeNumbers(125001, 250000);
             }
         });
         Thread t3 = new Thread(new Runnable(){
             public void run(){
             System.out.println("Using Thread name: " + Thread.currentThread().getName());
-            getPrimeNumbers(1000001, 1500000);
+            getPrimeNumbers(250001, 375000);
             }
         });
         Thread t4 = new Thread(new Runnable(){
             public void run(){
             System.out.println("Using Thread name: " + Thread.currentThread().getName());
-            getPrimeNumbers(1500001, 2000000);
+            getPrimeNumbers(375001, 500000);
             }
         });
         //Divide the work between two threads

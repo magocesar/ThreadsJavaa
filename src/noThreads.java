@@ -1,6 +1,6 @@
 public class noThreads{
     public static void main(String[] args){
-        getPrimeNumbers(2, 10);
+        getPrimeNumbers(2, 2000000);
     }
 
     public static void getPrimeNumbers(int min, int max){

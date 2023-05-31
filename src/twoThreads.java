@@ -3,13 +3,13 @@ public class twoThreads {
         Thread t1 = new Thread(new Runnable(){
             public void run(){
             System.out.println("Using Thread name: " + Thread.currentThread().getName());
-            getPrimeNumbers(2, 1000000);
+            getPrimeNumbers(2, 250000);
             }
         });
         Thread t2 = new Thread(new Runnable(){
             public void run(){
             System.out.println("Using Thread name: " + Thread.currentThread().getName());
-            getPrimeNumbers(1000001 , 2000000);
+            getPrimeNumbers(250001 , 500000);
             }
         });
         //Divide the work between two threads

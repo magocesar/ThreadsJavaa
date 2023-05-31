@@ -3,7 +3,7 @@ public class oneThread {
         Thread t = new Thread(new Runnable(){
             public void run(){
             System.out.println("Using Thread name: " + Thread.currentThread().getName());
-            getPrimeNumbers(2, 2000000);
+            getPrimeNumbers(2, 500000);
             }
         });
         t.start();
