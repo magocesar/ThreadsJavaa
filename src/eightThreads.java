@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
-public class fourThreads {
+public class eightThreads {
     public static void main(String[] args){
-        start(2, 1_000_000);
+        start(2, 5_000_000);
     }
 
     public static boolean isPrime(int n){
@@ -24,9 +24,9 @@ public class fourThreads {
 
     public static void start(int min, int max){
         ArrayList<Thread> threads = new ArrayList<Thread>();
-        for(int i = 0; i < 4; i++){
-            int init = min + (max - min) / 4 * i;
-            int end = min + (max - min) / 4 * (i + 1);
+        for(int i = 0; i < 8; i++){
+            int init = min + (max - min) / 8 * i;
+            int end = min + (max - min) / 8 * (i + 1);
             Thread t = new Thread(new Runnable(){
                 @Override
                 public void run(){
@@ -40,8 +40,5 @@ public class fourThreads {
         for(Thread t : threads){
             t.start();
         }
-
     }
 }
-    
-

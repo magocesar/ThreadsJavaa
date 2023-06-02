@@ -1,33 +1,46 @@
+import java.util.ArrayList;
+
 public class twoThreads {
     public static void main(String[] args){
-        Thread t1 = new Thread(new Runnable(){
-            public void run(){
-            System.out.println("Using Thread name: " + Thread.currentThread().getName());
-            getPrimeNumbers(2, 250000);
+        start(2, 1_000_000);
+    }
+
+    public static boolean isPrime(int n){
+        for (int i = 2; i < n; i++){
+            if (n % i == 0){
+                return false;
             }
-        });
-        Thread t2 = new Thread(new Runnable(){
-            public void run(){
-            System.out.println("Using Thread name: " + Thread.currentThread().getName());
-            getPrimeNumbers(250001 , 500000);
-            }
-        });
-        //Divide the work between two threads
-        t1.start();
-        t2.start();
+        }
+        return true;
     }
 
     public static void getPrimeNumbers(int min, int max){
         for(int i = min; i <= max; i++){
-            int count = 0;
-            for(int j = 1; j <= i; j++){
-                if(i % j == 0){
-                    count++;
-                }
-            }
-            if(count == 2){
+            if (isPrime(i)){
                 System.out.println(i);
             }
         }
+    }
+
+    public static void start(int min, int max){
+        ArrayList<Thread> threads = new ArrayList<Thread>();
+        for (int i = 0; i < 2; i++){
+            int init = min + (max - min) / 2 * i;
+            int end = min + (max - min) / 2 * (i + 1);
+            Thread t = new Thread(new Runnable(){
+                @Override
+                public void run(){
+                    getPrimeNumbers(init, end);
+                }
+            });
+            threads.add(t);
+        }
+        for (Thread t : threads){
+            t.setPriority(Thread.MAX_PRIORITY);
+        }
+        for (Thread t : threads){
+            t.start();
+        }
+
     }
 }
