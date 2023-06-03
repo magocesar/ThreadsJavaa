@@ -1,0 +1,63 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "eightThreads",
+            "request": "launch",
+            "mainClass": "eightThreads",
+            "projectName": "ThreadsJava_67e21793"
+        },
+        {
+            "type": "java",
+            "name": "fourThreads",
+            "request": "launch",
+            "mainClass": "fourThreads",
+            "projectName": "ThreadsJava_67e21793"
+        },
+        {
+            "type": "java",
+            "name": "myThread",
+            "request": "launch",
+            "mainClass": "myThread",
+            "projectName": "ThreadsJava_67e21793"
+        },
+        {
+            "type": "java",
+            "name": "noThreads",
+            "request": "launch",
+            "mainClass": "noThreads",
+            "projectName": "ThreadsJava_67e21793"
+        },
+        {
+            "type": "java",
+            "name": "oneThread",
+            "request": "launch",
+            "mainClass": "oneThread",
+            "projectName": "ThreadsJava_67e21793"
+        },
+        {
+            "type": "java",
+            "name": "six",
+            "request": "launch",
+            "mainClass": "six",
+            "projectName": "ThreadsJava_67e21793"
+        },
+        {
+            "type": "java",
+            "name": "twoThreads",
+            "request": "launch",
+            "mainClass": "twoThreads",
+            "projectName": "ThreadsJava_67e21793"
+        }
+    ]
+}
