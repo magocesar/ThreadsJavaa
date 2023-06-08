@@ -67,6 +67,10 @@ class Ladrao:
 
         if(not self.senhaEncontrada.is_set() and self.policialChegou.is_set()):
             print(f"\nLadrão {threading.current_thread().name} foi pego pelo policial")
+            return False
+
+        print(f"\nLadrão {threading.current_thread().name} terminou de procurar a senha")
+        return False
         
     def decrescente(self):
         while not self.senhaEncontrada.is_set() and not self.policialChegou.is_set():
@@ -82,6 +86,10 @@ class Ladrao:
 
         if(not self.senhaEncontrada.is_set() and self.policialChegou.is_set()):
             print(f"\nLadrão {threading.current_thread().name} foi pego pelo policial")
+            return False
+
+        print(f"\nLadrão {threading.current_thread().name} terminou de procurar a senha")
+        return False
         
 class Policial:
     def __init__(self, tempoResposta, senhaEncontrada, policialChegou):
